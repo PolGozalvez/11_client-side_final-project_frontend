@@ -1,24 +1,20 @@
 import './App.css'
-import { useEffect } from 'react'
+import { Header } from './components/Header'
+import { BookForm } from './components/BookForm'
+import { ListContainer } from './components/ListContainer'
+import { BookList } from './components/BookList'
+import { useTodos } from './Hooks/useTodos'
 
 function App() {
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(import.meta.env.VITE_API_URL)
-        const data = await response.json()
-        console.log('Datos de la API:', data)
-      } catch (error) {
-        console.error('Error al obtener datos:', error)
-      }
-    }
-
-    fetchData()
-  }, [])
+  const { todos, handleCreateTask } = useTodos();
 
   return (
     <>
-        <h1>Books</h1>
+        <Header/>
+        <BookForm addTask={handleCreateTask}/>
+        <ListContainer>
+            <BookList itemList={todos}/>
+        </ListContainer>
     </>
   )
 }
