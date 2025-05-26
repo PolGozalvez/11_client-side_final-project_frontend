@@ -1,133 +1,132 @@
 .task {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  padding: 1rem;
-  border: 2px solid var(--border-grey);
-  border-radius: .5rem;
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    padding: 1rem;
+    border: 2px solid var(--border-grey);
+    border-radius: 0.5rem;
+    gap: 1rem;
 }
 
 .task h4 {
-  margin: 0;
-  color: var(--text-white);
-  text-align: left;
-  font-size: 20px;
+    margin: 0;
+    color: var(--text-white);
+    text-align: left;
+    font-size: 20px;
 }
 
 .task__author {
-  color: var(--text-white);
-  margin: 0;
-  text-align: left;
+    color: var(--text-white);
+    margin: 0;
+    text-align: left;
 }
 
 .task__year {
-  color: var(--text-white);
-  margin: 0;
-  text-align: right;
-  background: #f1f1f1;
-  color: #888;
-  font-size: .95rem;
-  border-radius: .5rem;
-  padding: .2rem .8rem;
-  margin-left: 1rem;
-  font-weight: 500;
+    color: var(--text-white);
+    margin: 0;
+    text-align: right;
+    background: #f1f1f1;
+    color: #888;
+    font-size: 0.95rem;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.8rem;
+    margin-left: 1rem;
+    font-weight: 500;
 }
-
 
 .task__status--completed,
 .task__status--progress,
 .task__status--pending {
-  width: 24%;
-  color: var(--text-white);
-  border-radius: .25rem;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: bold;
-  font-size: .9rem;
+    width: 24%;
+    color: var(--text-white);
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .task__status--completed {
-  background-color: green;
-  color: white;
+    background-color: green;
+    color: white;
 }
 
 .task__status--progress {
-  background-color:blue;
-  color: white;
+    background-color: blue;
+    color: white;
 }
 
 .task__status--pending {
-  background-color: gray;
-  color: white;
+    background-color: gray;
+    color: white;
 }
 
 .task__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .task__title {
-  margin: 0;
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--text-black);
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-black);
 }
 
 .task__divider {
-  border: none;
-  border-top: 1px solid #eee;
-  margin: 0.7rem 0 0.5rem 0;
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 0.7rem 0 0.5rem 0;
 }
 
 .task__actions {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 .task__edit {
-  background: #e3f0fb;
-  color: #1976d2;
-  border: none;
-  border-radius: .3rem;
-  padding: .4rem 1.2rem;
-  font-weight: 500;
-  cursor: pointer;
+    background: #e3f0fb;
+    color: #1976d2;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.4rem 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
 }
 .task__edit:hover {
-  background: #bbdefb;
+    background: #bbdefb;
 }
 
 .task__delete {
-  background: #fdecea;
-  color: #d32f2f;
-  border: none;
-  border-radius: .3rem;
-  padding: .4rem 1.2rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
+    background: #fdecea;
+    color: #d32f2f;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.4rem 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 .task__delete:hover {
-  background: #ffbdbd;
+    background: #ffbdbd;
 }
 
 @media (prefers-color-scheme: light) {
-  .task {
-    background-color: var(--bg-white);
-    border-color: var(--border-light);
-  }
+    .task {
+        background-color: var(--bg-white);
+        border-color: var(--border-light);
+    }
 
-  .task h4 {
-    color: var(--text-black);
-  }
+    .task h4 {
+        color: var(--text-black);
+    }
 
-  .task__description {
-    color: var(--text-black);
-  }
+    .task__description {
+        color: var(--text-black);
+    }
 }

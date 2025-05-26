@@ -1,13 +1,16 @@
 import { BookCard } from "./BookCard";
 
-export const BookList = ({ itemList }) => {
+export function BookList({ books = [], deleteBook, updateBook }) {
     return (
         <ul>
-            {itemList.map((item) => {
-                const { uuid } = item;
-
-                return <BookCard key={uuid} item={item} />;
-            })}
+            {books.map((book) => (
+                <BookCard
+                    key={book.id}
+                    item={book}
+                    deleteBook={deleteBook}
+                    updateBook={updateBook}
+                />
+            ))}
         </ul>
-    )
+    );
 }
