@@ -1,12 +1,12 @@
 import styles from "./BookCard.module.css";
 
-export const BookCard = ({ item, deleteBook, updateBook }) => {
+export const BookCard = ({ item, deleteBook, setEditingBook }) => {
     const { id, title, author, year, status } = item;
 
     const STATUS_STYLES = {
-        pending: styles["task__status--pending"],
-        "in-progress": styles["task__status--progress"],
-        completed: styles["task__status--completed"],
+        pending: styles["book__status--pending"],
+        "in-progress": styles["book__status--progress"],
+        completed: styles["book__status--completed"],
     };
 
     const handleDelete = () => {
@@ -16,22 +16,26 @@ export const BookCard = ({ item, deleteBook, updateBook }) => {
     };
 
     const handleEdit = () => {
-        alert("Funcionalidad de editar pendiente de implementar");
+        setEditingBook(item);
     };
 
     return (
-        <li className={styles.task}>
-            <div className={styles.task__header}>
-                <h4 className={styles.task__title}>{title}</h4>
-                <span className={styles.task__year}>{year}</span>
+        <li className={styles.book}>
+            <div className={styles.book__header}>
+                <h4 className={styles.book__title}>{title}</h4>
+                <span className={styles.book__year}>{year}</span>
             </div>
-            <span className={styles.task__author}>{author}</span>
-            <hr className={styles.task__divider} />
+            <span className={styles.book__author}>{author}</span>
+            <hr className={styles.book__divider} />
             <span className={STATUS_STYLES[status]}>{status}</span>
-            <hr className={styles.task__divider} />
-            <div className={styles.task__actions}>
-                <button className={styles.task__edit} onClick={handleEdit}>Editar</button>
-                <button className={styles.task__delete} onClick={handleDelete}>Eliminar</button>
+            <hr className={styles.book__divider} />
+            <div className={styles.book__actions}>
+                <button className={styles.book__edit} onClick={handleEdit}>
+                    Editar
+                </button>
+                <button className={styles.book__delete} onClick={handleDelete}>
+                    Eliminar
+                </button>
             </div>
         </li>
     );

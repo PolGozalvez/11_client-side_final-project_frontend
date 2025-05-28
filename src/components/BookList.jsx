@@ -1,6 +1,6 @@
 import { BookCard } from "./BookCard";
 
-export function BookList({ books = [], deleteBook, updateBook }) {
+export function BookList({ books = [], deleteBook, setEditingBook }) {
     return (
         <ul>
             {books.map((book) => (
@@ -8,7 +8,7 @@ export function BookList({ books = [], deleteBook, updateBook }) {
                     key={book.id}
                     item={book}
                     deleteBook={deleteBook}
-                    updateBook={updateBook}
+                    setEditingBook={setEditingBook}
                 />
             ))}
         </ul>

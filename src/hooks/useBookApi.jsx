@@ -7,8 +7,8 @@ export function useBooksApi() {
 
     useEffect(() => {
         fetch(API_URL)
-            .then(res => res.json())
-            .then(data => setBooks(data));
+            .then((res) => res.json())
+            .then((data) => setBooks(data));
     }, []);
 
     const createBook = async (book) => {
@@ -18,12 +18,12 @@ export function useBooksApi() {
             body: JSON.stringify(book),
         });
         const saved = await res.json();
-        setBooks(prevBooks => [...prevBooks, saved]);
+        setBooks((prevBooks) => [...prevBooks, saved]);
     };
 
     const deleteBook = async (id) => {
         await fetch(`${API_URL}/${id}`, { method: "DELETE" });
-        setBooks(prevBooks => prevBooks.filter(book => book.id !== id));
+        setBooks((prevBooks) => prevBooks.filter((book) => book.id !== id));
     };
 
     const updateBook = async (id, updatedBook) => {
@@ -33,8 +33,8 @@ export function useBooksApi() {
             body: JSON.stringify(updatedBook),
         });
         const saved = await res.json();
-        setBooks(prevBooks =>
-            prevBooks.map(book => book.id === id ? saved : book)
+        setBooks((prevBooks) =>
+            prevBooks.map((book) => (book.id === id ? saved : book)),
         );
     };
 
