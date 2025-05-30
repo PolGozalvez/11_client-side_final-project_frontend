@@ -1,0 +1,132 @@
+.book {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    padding: 1rem;
+    border: 2px solid var(--border-grey);
+    border-radius: 0.5rem;
+    gap: 1rem;
+}
+
+.book h4 {
+    margin: 0;
+    color: var(--text-white);
+    text-align: left;
+    font-size: 20px;
+}
+
+.book__author {
+    color: var(--text-white);
+    margin: 0;
+    text-align: left;
+}
+
+.book__year {
+    color: var(--text-white);
+    margin: 0;
+    text-align: right;
+    background: #f1f1f1;
+    color: #888;
+    font-size: 0.95rem;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.8rem;
+    margin-left: 1rem;
+    font-weight: 500;
+}
+
+.book__status--read,
+.book__status--progress,
+.book__status--pending {
+    width: 24%;
+    color: var(--text-white);
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.book__status--read {
+    background-color: green;
+    color: white;
+}
+
+.book__status--progress {
+    background-color: blue;
+    color: white;
+}
+
+.book__status--pending {
+    background-color: gray;
+    color: white;
+}
+
+.book__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.book__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-black);
+}
+
+.book__divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 0.7rem 0 0.5rem 0;
+}
+
+.book__actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.book__edit {
+    background: #e3f0fb;
+    color: #1976d2;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.4rem 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.book__edit:hover {
+    background: #bbdefb;
+}
+
+.book__delete {
+    background: #fdecea;
+    color: #d32f2f;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.4rem 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.book__delete:hover {
+    background: #ffbdbd;
+}
+
+@media (prefers-color-scheme: light) {
+    .book {
+        background-color: var(--bg-white);
+        border-color: var(--border-light);
+    }
+
+    .book h4 {
+        color: var(--text-black);
+    }
+
+    .book__description {
+        color: var(--text-black);
+    }
+}
