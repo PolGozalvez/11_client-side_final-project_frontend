@@ -7,40 +7,36 @@ describe("Given BookForm component", () => {
         cleanup();
     });
 
-    test('When a book is provided Then should display the title in the form', () => {
+    test("When a book is provided Then should display the title in the form", () => {
         // Arrange
         const book = {
-            title: 'Book',
-            author: 'Pol',
+            title: "Book",
+            author: "Pol",
             year: 2025,
-            status: 'pending'
+            status: "pending",
         };
 
         // Act
-        const { getByDisplayValue } = render(
-            <BookForm editingBook={book}/>
-        );
+        const { getByDisplayValue } = render(<BookForm editingBook={book} />);
 
         // Assert
         expect(getByDisplayValue("Book")).toBeDefined();
     });
 
-    test('When no book is provided and form is opened Then should show empty title field', () => {
+    test("When no book is provided and form is opened Then should show empty title field", () => {
         // Arrange
         const book = {
-            title: '',
-            author: '',
+            title: "",
+            author: "",
             year: 2025,
-            status: 'pending'
+            status: "pending",
         };
 
         // Act
-        const { container } = render(
-            <BookForm editingBook={book}/>
-        );
+        const { container } = render(<BookForm editingBook={book} />);
         const titleInput = container.querySelector('input[name="title"]');
 
         // Assert
-        expect(titleInput.value).toBe('');
+        expect(titleInput.value).toBe("");
     });
 });

@@ -7,13 +7,8 @@ export const BookForm = ({
     editingBook,
     setEditingBook,
 }) => {
-    const {
-        showForm,
-        form,
-        handleChange,
-        handleShowForm,
-        handleSubmit,
-    } = useBookForm(editingBook, setEditingBook, addTask, updateBook);
+    const { showForm, form, handleChange, handleShowForm, handleSubmit } =
+        useBookForm(editingBook, setEditingBook, addTask, updateBook);
 
     return (
         <>

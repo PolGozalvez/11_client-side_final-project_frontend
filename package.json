@@ -7,9 +7,11 @@
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",
-        "test": "vitest",
-        "prepare": "husky",
-        "format": "prettier --write ."
+        "test": "vitest run",
+        "prepare": "husky install",
+        "format": "prettier --write .",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix"
     },
     "dependencies": {
         "react": "^19.1.0",
