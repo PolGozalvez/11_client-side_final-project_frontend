@@ -36,7 +36,7 @@
     font-weight: 500;
 }
 
-.book__status--completed,
+.book__status--read,
 .book__status--progress,
 .book__status--pending {
     width: 24%;
@@ -48,7 +48,7 @@
     font-size: 0.9rem;
 }
 
-.book__status--completed {
+.book__status--read {
     background-color: green;
     color: white;
 }

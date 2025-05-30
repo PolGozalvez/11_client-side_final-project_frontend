@@ -6,7 +6,7 @@ export const BookCard = ({ item, deleteBook, setEditingBook }) => {
     const STATUS_STYLES = {
         pending: styles["book__status--pending"],
         "in-progress": styles["book__status--progress"],
-        completed: styles["book__status--completed"],
+        read: styles["book__status--read"],
     };
 
     const handleDelete = () => {

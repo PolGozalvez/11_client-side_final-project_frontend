@@ -15,50 +15,62 @@ describe("Given BookCard component", () => {
             title: "Don Quijote de la Mancha",
             author: "Miguel de Cervantes",
             year: 1605,
-            status: "completed"
+            status: "completed",
         };
 
         // Act
-        const { getByText, container } = render(<BookCard item={completedBook}/>);
+        const { getByText, container } = render(
+            <BookCard item={completedBook} />,
+        );
 
         // Assert
         expect(getByText("Don Quijote de la Mancha")).toBeDefined();
-        expect(container.querySelector(`.${styles["book__status--completed"]}`)).toBeDefined();
+        expect(
+            container.querySelector(`.${styles["book__status--completed"]}`),
+        ).toBeDefined();
     });
 
-    test("When task is pending Then should display with pending status format", () => {
+    test("When Book is pending Then should display with pending status format", () => {
         // Arrange
         const pendingBook = {
             id: 2,
             title: "Hamlet",
             author: "William Shakespeare",
             year: 1603,
-            status: "pending"
+            status: "pending",
         };
 
         // Act
-        const { getByText, container } = render(<BookCard item={pendingBook}/>);
+        const { getByText, container } = render(
+            <BookCard item={pendingBook} />,
+        );
 
         // Assert
         expect(getByText("Hamlet")).toBeDefined();
-        expect(container.querySelector(`.${styles["book__status--pending"]}`)).toBeDefined();
+        expect(
+            container.querySelector(`.${styles["book__status--pending"]}`),
+        ).toBeDefined();
     });
 
-    test("When task is in progress Then should display with in-progress status format", () => {
+    test("When Book is in progress Then should display with in-progress status format", () => {
         // Arrange
         const inProgressBook = {
             id: 3,
             title: "Crimen y castigo",
             author: "Fiódor Dostoyevski",
             year: 1866,
-            status: "in-progress"
+            status: "in-progress",
         };
 
         // Act
-        const { getByText, container } = render(<BookCard item={inProgressBook}/>);
+        const { getByText, container } = render(
+            <BookCard item={inProgressBook} />,
+        );
 
         // Assert
         expect(getByText("Crimen y castigo")).toBeDefined();
-        expect(container.querySelector(`.${styles["book__status--progress"]}`)).toBeDefined();
+        expect(
+            container.querySelector(`.${styles["book__status--progress"]}`),
+        ).toBeDefined();
     });
 });

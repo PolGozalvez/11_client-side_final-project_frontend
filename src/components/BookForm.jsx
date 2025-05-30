@@ -1,43 +1,19 @@
 import styles from "./BookForm.module.css";
-import { useState, useEffect } from "react";
+import { useBookForm } from "../hooks/useBookForm";
 
-export const BookForm = ({ addTask, updateBook, editingBook, setEditingBook }) => {
-    const [showForm, setShowForm] = useState(false);
-    const [form, setForm] = useState({
-        title: "",
-        author: "",
-        year: "2025",
-        status: "pending"
-    });
-
-    useEffect(() => {
-        if (editingBook) {
-            setForm(editingBook);
-            setShowForm(true);
-        }
-    }, [editingBook]);
-
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (editingBook) {
-            updateBook(editingBook.id, form);
-            setEditingBook(null);
-        } else {
-            addTask(form);
-        }
-        setForm({ title: "", author: "", year: "2025", status: "pending" });
-        setShowForm(false);
-    };
-
-    const handleShowForm = () => {
-        setShowForm(!showForm);
-        setEditingBook(null);
-        setForm({ title: "", author: "", year: "2025", status: "pending" });
-    };
+export const BookForm = ({
+    addTask,
+    updateBook,
+    editingBook,
+    setEditingBook,
+}) => {
+    const {
+        showForm,
+        form,
+        handleChange,
+        handleShowForm,
+        handleSubmit,
+    } = useBookForm(editingBook, setEditingBook, addTask, updateBook);
 
     return (
         <>
@@ -97,7 +73,7 @@ export const BookForm = ({ addTask, updateBook, editingBook, setEditingBook }) =
                             >
                                 <option value="pending">Pending</option>
                                 <option value="in-progress">In progress</option>
-                                <option value="completed">Completed</option>
+                                <option value="read">Read</option>
                             </select>
                         </label>
                         <div className={styles.button__container}>
