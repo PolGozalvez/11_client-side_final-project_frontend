@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API_URL = "http://localhost:3000/books";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export function useBooksApi() {
     const [books, setBooks] = useState([]);
